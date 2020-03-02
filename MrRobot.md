@@ -1,3 +1,5 @@
+# Warning: this writeup contains spoilers
+
 
 + **Did an nmap scan on the ip for services and open ports**
 
